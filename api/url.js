@@ -7,8 +7,8 @@ const shortid = require("shortid");
 const URL = require("../models/url");
 
 /*
-    @route:     POST /api/shorten
-    @desc:     To shorten the url
+@desc:     To shorten the url
+@route:     POST /api/url/shorten
 */
 router.post("/shorten", async (req, res) => {
   const { longUrl } = req.body;
@@ -53,8 +53,8 @@ router.post("/shorten", async (req, res) => {
 });
 
 /*
-    @route:     POST /api/shorten
-    @desc:     To shorten the url
+    @route:     GET /api/url/:code
+    @desc:     To redirect to original url
 */
 router.get("/:code", async (req, res) => {
   try {
