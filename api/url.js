@@ -52,4 +52,23 @@ router.post("/shorten", async (req, res) => {
   }
 });
 
+/*
+    @route:     POST /api/shorten
+    @desc:     To shorten the url
+*/
+router.get("/:code", async (req, res) => {
+  try {
+    const url = await URL.findOne({ urlCode: req.params.code });
+
+    if (url) {
+      return res.redirect(url.longUrl);
+    } else {
+      return res.status(404).json("No url found");
+    }
+  } catch (err) {
+    console.error(err);
+    res.status(500).json("Server error");
+  }
+});
+
 module.exports = router;

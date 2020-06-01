@@ -1,5 +1,5 @@
 const express = require("express");
-require('dotenv').config();
+require("dotenv").config();
 const mongoose = require("mongoose");
 
 //connecting to database
@@ -20,11 +20,18 @@ connectDB();
 const app = express();
 const port = 5000 || process.env.PORT;
 
+//Importing APIs
+const urlAPI = require("./api/url");
+
 app.use(express.json({ extended: false }));
 
-app.get("/", (req, res) => {
-  res.send("hi");
-});
+app.use('/api/url/',urlAPI);
+
+if (process.env.NODE_ENV === "production") {
+  app.get("/", (req, res) => {
+    res.send("Sending react page");
+  });
+};
 
 app.listen(port, () => {
   console.log(`Server started at ${port}`);
