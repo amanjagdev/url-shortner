@@ -5,5 +5,18 @@
   "main": "server.js",
   "repository": "https://github.com/amanjagdev/url-shortner",
   "author": "Aman Jagdev",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.9.16",
+    "shortid": "^2.2.15",
+    "valid-url": "^1.0.9"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
 }
