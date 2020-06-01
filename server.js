@@ -31,6 +31,10 @@ if (process.env.NODE_ENV === "production") {
   app.get("/", (req, res) => {
     res.send("Sending react page");
   });
+} else {
+  app.get("/", (req, res) => {
+    res.send("Welcome to url shortner");
+  });
 }
 
 app.listen(port, () => {
