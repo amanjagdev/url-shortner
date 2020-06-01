@@ -1,0 +1,9 @@
+{
+  "name": "url-shortner",
+  "version": "1.0.0",
+  "description": "A basic url shortnening service made on MERN",
+  "main": "server.js",
+  "repository": "https://github.com/amanjagdev/url-shortner",
+  "author": "Aman Jagdev",
+  "license": "MIT"
+}
