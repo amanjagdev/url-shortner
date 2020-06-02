@@ -9,9 +9,9 @@ const Aside = () => {
     e.preventDefault();
     const baseUrl = process.env.BASE_URL || "http://localhost:5000/api/url";
     axios
-      .post(`${baseUrl}/shorten`, { longUrl })
+      .post(`${baseUrl}/shorten`, { "longUrl" : longUrl })
       .then((res) => {
-        console.log(res);
+        console.log(res.data);
       })
       .catch((err) => {
         console.log(err);
