@@ -21,7 +21,6 @@ const App = () => {
     <Router>
       <Switch>
         <Route path="/" exact component={MainContent} />
-        <Route path="/:code" exact component={Redirect} />
         <Route path="*" component={NotFound} />
       </Switch>
     </Router>
