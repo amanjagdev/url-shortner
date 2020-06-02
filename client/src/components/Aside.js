@@ -7,7 +7,7 @@ const Aside = () => {
 
   const handleClick = (e) => {
     e.preventDefault();
-    const baseUrl = process.env.BASE_URL || "https://smll-url.herokuapp.com/api/url";
+    const baseUrl = "https://smll-url.herokuapp.com/api/url";
     axios
       .post(`${baseUrl}/shorten`, { "longUrl" : longUrl })
       .then((res) => {

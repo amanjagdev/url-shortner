@@ -6,7 +6,7 @@ const Redirect = (props) => {
   const code = props.match.params.code;
   
   useEffect(() => {
-    const baseUrl = process.env.BASE_URL || "http://localhost:5000/api/url";
+    const baseUrl = "https://smll-url.herokuapp.com/api/url"
     axios.get(`${baseUrl}/${code}`).then((res) => {
       window.location.href = res.data;
     }).catch((err) => {
