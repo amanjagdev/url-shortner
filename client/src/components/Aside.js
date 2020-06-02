@@ -12,6 +12,7 @@ const Aside = () => {
       .post(`${baseUrl}/shorten`, { "longUrl" : longUrl })
       .then((res) => {
         console.log(res.data);
+        setShortUrl(res.data.shortUrl);
       })
       .catch((err) => {
         console.log(err);
