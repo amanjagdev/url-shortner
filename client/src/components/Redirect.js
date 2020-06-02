@@ -4,6 +4,7 @@ import {withRouter} from 'react-router-dom'
 
 const Redirect = (props) => {
   const code = props.match.params.code;
+  
   useEffect(() => {
     const baseUrl = process.env.BASE_URL || "http://localhost:5000/api/url";
     axios.get(`${baseUrl}/${code}`).then((res) => {
@@ -11,7 +12,7 @@ const Redirect = (props) => {
     }).catch((err) => {
       props.history.push('/error/404');
     });
-  }, []);
+  }, [code]);
 
   return (
     <div>
