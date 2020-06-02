@@ -1,11 +1,31 @@
-import React from 'react';
+import React from "react";
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
-function App() {
+//Imoprting Components
+import Main from "./components/Main";
+import Aside from "./components/Aside";
+import Redirect from "./components/Redirect";
+import NotFound from "./components/NotFound";
+
+const MainContent = () => {
   return (
-    <div className="App">
-      
-    </div>
+    <React.Fragment>
+      <Main />
+      <Aside />
+    </React.Fragment>
   );
-}
+};
+
+const App = () => {
+  return (
+    <Router>
+      <Switch>
+        <Route path="/" exact component={MainContent} />
+        <Route path="/:code" exact component={Redirect} />
+        <Route path="*" component={NotFound} />
+      </Switch>
+    </Router>
+  );
+};
 
 export default App;
