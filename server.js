@@ -32,20 +32,6 @@ app.use(express.json({ extended: false }));
 
 app.use("/api/url", urlAPI);
 
-if (process.env.NODE_ENV === "production") {
-  app.use(favicon(__dirname + "/client/build/favicon.ico"));
-  app.use(express.static(__dirname));
-  app.use(express.static(path.join(__dirname, "client/build")));
-
-  app.get("/*", function (req, res) {
-    res.sendFile(path.join(__dirname, "client/build", "index.html"));
-  });
-} else {
-  app.get("/*", (req, res) => {
-    res.send("Welcome to url shortner");
-  });
-}
-
 app.listen(port, () => {
   console.log(`Server started at ${port}`);
 });

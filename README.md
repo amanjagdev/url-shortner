@@ -1,7 +1,7 @@
 # URL Shortening Service
 
 ## Description
-create short urls using MERN(MongoDB, ExpressJS, ReactJs, NodeJs)
+A basic application to shorten your services | Made using JS (Node and Express)
 - Backend API : Completed
 - Frontend  : Yet to be Completed
 ---
