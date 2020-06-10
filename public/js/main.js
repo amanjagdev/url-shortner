@@ -19,13 +19,9 @@ async function postData(url = '', data = {}) {
 }
 
 submitBtn.addEventListener('click', () => {
-    const data = { "inputStr": inputText.value };
-    postData('/api/analyse/', data)
+    const data = { "longUrl": inputText.value };
+    postData('/api/url/shorten', data)
         .then(data => {
-            if (data.positive > data.negative) {
-                resultOut.innerHTML = "<div class='green'>POSITIVE</div>"
-            } else {
-                resultOut.innerHTML = "<div class='red'>NEGATIVE</div>"
-            }
+            resultOut.innerHTML = `<a href="${data.shortUrl}">${data.shortUrl}</a>`;
         });
 });

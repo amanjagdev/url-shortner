@@ -3,7 +3,7 @@
 ## Description
 A basic application to shorten your services | Made using JS (Node and Express)
 - Backend API : Completed
-- Frontend  : Yet to be Completed
+- Frontend  : Completed
 ---
 
 ## Ouick Start
@@ -24,7 +24,7 @@ Production
 
 ---
 
-## Use Directions
+## Use Directions for Backend API
 
 ### POST api/url/shorten
 
